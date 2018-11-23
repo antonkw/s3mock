@@ -5,7 +5,7 @@ import java.util.UUID
 import akka.http.scaladsl.model.DateTime
 import com.amazonaws.services.s3.Headers
 import com.amazonaws.services.s3.model.ObjectMetadata
-import com.typesafe.scalalogging.LazyLogging
+import com.typesafe.scalalogging.StrictLogging
 import io.findify.s3mock.error.{NoSuchBucketException, NoSuchKeyException}
 import io.findify.s3mock.provider.metadata.{InMemoryMetadataStore, MetadataStore}
 import io.findify.s3mock.request.{CompleteMultipartUpload, CreateBucketConfiguration}
@@ -16,7 +16,7 @@ import scala.collection.concurrent.TrieMap
 import scala.collection.mutable
 import scala.util.Random
 
-class InMemoryProvider extends Provider with LazyLogging {
+class InMemoryProvider extends Provider with StrictLogging {
   private val mdStore = new InMemoryMetadataStore
   private val bucketDataStore = new TrieMap[String, BucketContents]
   private val multipartTempStore = new TrieMap[String, mutable.SortedSet[MultipartChunk]]
