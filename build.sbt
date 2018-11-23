@@ -4,7 +4,7 @@ version := "0.2.5"
 
 organization := "io.findify"
 
-scalaVersion := "2.12.4"
+scalaVersion := "2.11.8"
 
 crossScalaVersions := Seq("2.11.11", "2.12.4")
 
