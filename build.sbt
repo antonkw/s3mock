@@ -28,6 +28,9 @@ libraryDependencies ++= Seq(
   "com.lightbend.akka" %% "akka-stream-alpakka-s3" % "0.17" % "test"
 )
 
+excludeDependencies += "commons-logging" % "commons-logging"
+excludeDependencies += "com.typesafe.scala-logging" % "scala-logging-slf4j_2.11"
+
 parallelExecution in Test := false
 
 publishMavenStyle := true
